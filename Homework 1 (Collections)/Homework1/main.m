@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- Функция, выводящее содержимое массива
+ Функция, выводящая содержимое массива
 
  @param array массив
  */
@@ -23,7 +23,7 @@ int main()
     @autoreleasepool
     {
         //  1.
-        NSMutableArray * array = @[@(3), @(6), @(32), @(24), @(81)].mutableCopy;
+        NSMutableArray * array = @[@3, @6, @32, @24, @81].mutableCopy;
         printArray(@"1.  ", array);
         
         //  1.1
