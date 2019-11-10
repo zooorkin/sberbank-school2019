@@ -10,7 +10,8 @@
 - [Homework 7 (Part I - Comics)](Homework%207%20(Part%20I%20-%20Comics))
 - [Homework 7 (Part II - Trello)](Homework%207%20(Part%20II%20-%20Trello))
 - [Homework 8 (Architecture)](Homework%208%20(Architecture))
-- [Homework 9 (Git)](Homework%209%20(Part%20I%20-%20Git))
+- [Homework 9 (Part I - Git)](Homework%209%20(Part%20I%20-%20Git))
+- [Homework 9 (Part II - PackageManagers)](Homework%209%20(Part%20II%20-%20Package%20Managers))
 
 ### Авторы
 * [Зорькин Андрей](https://github.com/zooorkin)
