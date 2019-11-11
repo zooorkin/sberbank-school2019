@@ -12,6 +12,7 @@
 - [Homework 8 (Architecture)](Homework%208%20(Architecture))
 - [Homework 9 (Part I - Git)](Homework%209%20(Part%20I%20-%20Git))
 - [Homework 9 (Part II - PackageManagers)](Homework%209%20(Part%20II%20-%20Package%20Managers))
+- [Homework 11 (Multithreading)](Homework%2011%20(Multithreading))
 
 ### Авторы
 * [Зорькин Андрей](https://github.com/zooorkin)
