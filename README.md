@@ -14,6 +14,7 @@
 - [Homework 9 (Part II - PackageManagers)](Homework%209%20(Part%20II%20-%20Package%20Managers))
 - [Homework 10 (Camera + Gallery + CIFilter)](Homework%2010%20(Camera%20+%20Gallery%20+%20CIFilter))
 - [Homework 11 (Multithreading)](Homework%2011%20(Multithreading))
+- [Homework 12 (Networking)](Homework%2012%20(Networking))
 
 ### Авторы
 * [Зорькин Андрей](https://github.com/zooorkin)
