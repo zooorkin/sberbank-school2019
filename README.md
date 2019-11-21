@@ -15,6 +15,7 @@
 - [Homework 10 (Camera + Gallery + CIFilter)](Homework%2010%20(Camera%20+%20Gallery%20+%20CIFilter))
 - [Homework 11 (Multithreading)](Homework%2011%20(Multithreading))
 - [Homework 12 (Networking)](Homework%2012%20(Networking))
+- [Homework 13 (Core Data)](Homework%2013%20(Core%20Data))
 
 ### Авторы
 * [Зорькин Андрей](https://github.com/zooorkin)
