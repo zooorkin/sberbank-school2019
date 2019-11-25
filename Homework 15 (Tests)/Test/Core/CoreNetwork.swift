@@ -9,23 +9,23 @@
 import Foundation
 import UIKit.UIImage
 
-protocol ICoreNetwork {
+protocol CoreNetworkProtocol {
 
-    var delegate: ICoreNetworkDelegate? {get set}
+    var delegate: CoreNetworkDelegate? {get set}
     
     func downloadImage(url: URL, completion: @escaping (UIImage?, Error?) -> Void)
     
 }
 
 
-protocol ICoreNetworkDelegate {
+protocol CoreNetworkDelegate {
 
 }
 
 
-class CoreNetwork: ICoreNetwork {
+class CoreNetwork: CoreNetworkProtocol {
 
-    var delegate: ICoreNetworkDelegate?
+    var delegate: CoreNetworkDelegate?
     
     func downloadImage(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in

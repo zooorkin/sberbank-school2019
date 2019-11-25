@@ -33,7 +33,7 @@ class Presenter {
 
     var output: PresenterOutput?
     var interactor: InteractorInput?
-    var router: IRouterInput?
+    var router: RouterInput?
     
 }
 

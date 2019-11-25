@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol IRouterInput {
+protocol RouterInput {
     
 }
 
-class Router: IRouterInput {
+class Router: RouterInput {
     
 }

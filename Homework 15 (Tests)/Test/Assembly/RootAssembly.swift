@@ -6,18 +6,18 @@
 //  Copyright © 2019 Андрей Зорькин. All rights reserved.
 //
 
-protocol IRootAssembly {
+protocol RootAssemblyProtocol {
     
-    var presentationAssembly: IPresentationAssembly { get }
+    var presentationAssembly: PresentationAssemblyProtocol { get }
     
 }
 
-class RootAssembly: IRootAssembly {
+class RootAssembly: RootAssemblyProtocol {
 
-    lazy var presentationAssembly: IPresentationAssembly = PresentationAssembly(servicesAssembly: servicesAssembly)
+    lazy var presentationAssembly: PresentationAssemblyProtocol = PresentationAssembly(servicesAssembly: servicesAssembly)
 
-    private lazy var servicesAssembly: IServicesAssembly = ServicesAssembly(coreAssembly: coreAssembly)
+    private lazy var servicesAssembly: ServicesAssemblyProtocol = ServicesAssembly(coreAssembly: coreAssembly)
 
-    private lazy var coreAssembly: ICoreAssembly = CoreAssembly()
+    private lazy var coreAssembly: CoreAssemblyProtocol = CoreAssembly()
 
 }

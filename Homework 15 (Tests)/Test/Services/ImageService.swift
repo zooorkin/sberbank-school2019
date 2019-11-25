@@ -9,16 +9,16 @@
 import Foundation
 import UIKit.UIImage
 
-protocol IImageService {
+protocol ImageServiceProtocol {
 
-    var delegate: IImageServiceDelegate? {get set}
+    var delegate: ImageServiceDelegate? {get set}
     
     func downloadImageByURL(_ url: URL)
     
 }
 
 
-protocol IImageServiceDelegate {
+protocol ImageServiceDelegate {
     
     func imageServiceDidDownload(image: UIImage)
     
@@ -27,14 +27,14 @@ protocol IImageServiceDelegate {
 }
 
 
-class ImageService: IImageService, ICoreNetworkDelegate {
+class ImageService: ImageServiceProtocol, CoreNetworkDelegate {
 
-    var delegate: IImageServiceDelegate?
+    var delegate: ImageServiceDelegate?
 
-    private var coreNetwork: ICoreNetwork
+    private var coreNetwork: CoreNetworkProtocol
 
 
-    init(coreNetwork: ICoreNetwork) {
+    init(coreNetwork: CoreNetworkProtocol) {
         self.coreNetwork = coreNetwork
         self.coreNetwork.delegate = self
     }

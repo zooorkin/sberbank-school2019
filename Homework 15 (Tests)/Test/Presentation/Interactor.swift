@@ -42,9 +42,9 @@ class Interactor {
     
     private var cachedImage: UIImage?
     
-    private var imageService: IImageService
+    private var imageService: ImageServiceProtocol
     
-    init(imageService: IImageService) {
+    init(imageService: ImageServiceProtocol) {
         self.imageService = imageService
         self.imageService.delegate = self
     }
@@ -96,7 +96,7 @@ extension Interactor: InteractorInput {
     
 }
 
-extension Interactor: IImageServiceDelegate {
+extension Interactor: ImageServiceDelegate {
     
     func imageServiceDidDownload(image: UIImage) {
         if let output = output {

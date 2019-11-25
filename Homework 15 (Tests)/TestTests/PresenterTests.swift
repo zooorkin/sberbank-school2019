@@ -9,78 +9,6 @@
 import XCTest
 @testable import Test
 
-class MockInteractor: InteractorInput {
-    
-    /// Число вызовов функции show
-    private var showCallsCount = 0
-    /// Число вызовов функции download
-    private var downloadCallsCount = 0
-    /// Число вызовов функции cacheClear
-    private var cacheClearCallsCount = 0
-    
-    func show() {
-        showCallsCount += 1
-    }
-    
-    func download() {
-        downloadCallsCount += 1
-    }
-    
-    func cacheClear() {
-        cacheClearCallsCount += 1
-    }
-    
-    func verifyShowCallsCount(block: (Int) -> Void) {
-        block(showCallsCount)
-    }
-    func verifyDownloadCallsCount(block: (Int) -> Void) {
-        block(downloadCallsCount)
-    }
-    func verifyCacheClearCallsCount(block: (Int) -> Void) {
-        block(cacheClearCallsCount)
-    }
-    
-}
-
-class MockPresenterOutput: PresenterOutput {
-    
-    /// Число вызовов функции showImage
-    private var showImageCallsCount = 0
-    /// Число вызовов функции showAlert
-    private var showAlertCallsCount = 0
-    /// Число вызовов функции removeImage
-    private var removeImageCallsCount = 0
-    /// Значение переданного аргумента text при showAlert
-    private var savedText: String = ""
-    
-    func showImage(image: UIImage) {
-        showImageCallsCount += 1
-    }
-    
-    func showAlert(text: String) {
-        savedText = text
-        showAlertCallsCount += 1
-    }
-    
-    func removeImage() {
-        removeImageCallsCount += 1
-    }
-    
-    func verifyShowImageCallsCount(block: (Int) -> Void) {
-        block(showImageCallsCount)
-    }
-    func verifyShowAlertCallsCount(block: (Int) -> Void) {
-        block(showAlertCallsCount)
-    }
-    func verifyRemoveImageCallsCount(block: (Int) -> Void) {
-        block(removeImageCallsCount)
-    }
-    func verifySavedText(block: (String) -> Void) {
-        block(savedText)
-    }
-    
-}
-
 class PresenterTests: XCTestCase {
     
     var presenter: Presenter!
@@ -88,6 +16,7 @@ class PresenterTests: XCTestCase {
     var mockInteractor: MockInteractor!
     
     override func setUp() {
+        super.setUp()
         presenter = Presenter()
         mockPresenterOutput = MockPresenterOutput()
         mockInteractor = MockInteractor()
@@ -99,6 +28,7 @@ class PresenterTests: XCTestCase {
         presenter = nil
         mockPresenterOutput = nil
         mockInteractor = nil
+        super.tearDown()
     }
 
     // MARK: - Взаимодействие с interactor

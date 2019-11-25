@@ -6,23 +6,23 @@
 //  Copyright © 2019 Андрей Зорькин. All rights reserved.
 //
 
-protocol IServicesAssembly {
+protocol ServicesAssemblyProtocol {
     
-    var imageService: IImageService {get}
+    var imageService: ImageServiceProtocol {get}
     
 }
 
-class ServicesAssembly: IServicesAssembly {
+class ServicesAssembly: ServicesAssemblyProtocol {
     
-    private var coreAssembly: ICoreAssembly
+    private var coreAssembly: CoreAssemblyProtocol
     
     
-    init(coreAssembly: ICoreAssembly) {
+    init(coreAssembly: CoreAssemblyProtocol) {
         self.coreAssembly = coreAssembly
     }
     
     
-    lazy var imageService: IImageService =  {
+    lazy var imageService: ImageServiceProtocol =  {
         let coreNetwork = coreAssembly.coreNetwork
         return ImageService(coreNetwork: coreNetwork)
     }()

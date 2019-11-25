@@ -9,70 +9,6 @@
 import XCTest
 @testable import Test
 
-class MockImageService: IImageService {
-    
-    /// Число вызовов функции downloadImageByURL
-    private var downloadImageByURLCallsCount = 0
-    /// Значение переданного аргумента url при вызове downloadImageByURL
-    private var downloadImageByURLurl: URL!
-    /// Ошибка при скачивании
-    var withError = false
-    
-    var delegate: IImageServiceDelegate?
-    
-    func downloadImageByURL(_ url: URL) {
-        downloadImageByURLurl = url
-        downloadImageByURLCallsCount += 1
-        if withError {
-            delegate?.imageServiceDidNotDownloadImage()
-        } else {
-            delegate?.imageServiceDidDownload(image: .init())
-        }
-    }
-
-    func verifyDownloadImageByURLCallsCount(block: (Int) -> Void) {
-        block(downloadImageByURLCallsCount)
-    }
-    
-    func verifyDownloadImageByURLurl(block: (URL) -> Void) {
-        block(downloadImageByURLurl)
-    }
-    
-}
-
-class MockInteractorOutput: InteractorOutput {
-    
-    /// Число вызовов функции showImage
-    private var showImageCallsCount = 0
-    /// Число вызовов функции showError
-    private var showErrorCallsCount = 0
-    /// Число вызовов функции didDownload
-    private var didDownloadCallsCount = 0
-    
-    func showImage(image: UIImage) {
-        showImageCallsCount += 1
-    }
-    
-    func showError(_ error: Interactor.Error) {
-        showErrorCallsCount += 1
-    }
-    
-    func didDownload() {
-        didDownloadCallsCount += 1
-    }
-    
-    func verifyShowImageCallsCount(block: (Int) -> Void) {
-        block(showImageCallsCount)
-    }
-    func verifyshowErrorCallsCount(block: (Int) -> Void) {
-        block(showErrorCallsCount)
-    }
-    func verifyDidDownloadCallsCount(block: (Int) -> Void) {
-        block(didDownloadCallsCount)
-    }
-    
-}
-
 class InteractorTests: XCTestCase {
 
     var interactor: Interactor!
@@ -80,6 +16,7 @@ class InteractorTests: XCTestCase {
     var mockInteractorOutput: MockInteractorOutput!
 
     override func setUp() {
+        super.setUp()
         mockImageService = MockImageService()
         mockInteractorOutput = MockInteractorOutput()
         interactor = Interactor(imageService: mockImageService)
@@ -94,6 +31,7 @@ class InteractorTests: XCTestCase {
         interactor = nil
         mockImageService = nil
         mockInteractorOutput = nil
+        super.tearDown()
     }
     
     // MARK: - Взаимодействие с output

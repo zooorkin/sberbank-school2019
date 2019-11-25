@@ -6,14 +6,14 @@
 //  Copyright © 2019 Андрей Зорькин. All rights reserved.
 //
 
-protocol ICoreAssembly {
+protocol CoreAssemblyProtocol {
     
-    var coreNetwork: ICoreNetwork {get}
+    var coreNetwork: CoreNetworkProtocol {get}
     
 }
 
-class CoreAssembly: ICoreAssembly {
+class CoreAssembly: CoreAssemblyProtocol {
 
-    lazy var coreNetwork: ICoreNetwork = CoreNetwork()
+    lazy var coreNetwork: CoreNetworkProtocol = CoreNetwork()
 
 }

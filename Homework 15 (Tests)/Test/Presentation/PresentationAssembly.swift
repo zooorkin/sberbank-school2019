@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol IPresentationAssembly {
+protocol PresentationAssemblyProtocol {
     
     func navigationController(rootViewController: UIViewController) -> UINavigationController
     
@@ -16,12 +16,12 @@ protocol IPresentationAssembly {
     
 }
 
-class PresentationAssembly: IPresentationAssembly {
+class PresentationAssembly: PresentationAssemblyProtocol {
 
-    private var servicesAssembly: IServicesAssembly
+    private var servicesAssembly: ServicesAssemblyProtocol
 
 
-    init(servicesAssembly: IServicesAssembly) {
+    init(servicesAssembly: ServicesAssemblyProtocol) {
         self.servicesAssembly = servicesAssembly
     }
     
