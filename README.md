@@ -16,7 +16,7 @@
 - [Homework 11 (Multithreading)](Homework%2011%20(Multithreading))
 - [Homework 12 (Networking)](Homework%2012%20(Networking))
 - [Homework 13 (Core Data)](Homework%2013%20(Core%20Data))
-- Homework 14 (Design Patterns)
+- [Homework 14 (Design Patterns)](Homework%2014%20(Design%20Patterns))
 - [Homework 15 (Tests)](Homework%2015%20(Tests))
 
 ### Авторы
